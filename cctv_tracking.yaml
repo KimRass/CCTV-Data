@@ -1,0 +1,10 @@
+path: /home/jbkim/Documents/datasets/CCTV 추적 영상 # dataset root dir
+train: Training
+val: Validation
+test: # test images (optional)
+
+# Classes
+names:
+  0: person
+  1: wheelchair
+  2: stroller

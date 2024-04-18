@@ -45,10 +45,18 @@ def convert_to_voc_format(json_path, out_dir, cls_dict):
 
 
 if __name__ == "__main__":
-    json_path = "/home/jbkim/Documents/datasets/CCTV 추적 영상/Training/[라벨]휠체어_1/annotation_2111366.json"
-    out_dir = "/home/jbkim/Documents/cctv_data"
-    cls_dict = {
-        "person": 0,
-        "wheelchair": 1,
-    }
-    convert_to_voc_format(json_path=json_path, out_dir=out_dir, cls_dict=cls_dict)
+    DATA_ROOT = "/home/jbkim/Documents/datasets/CCTV 추적 영상/"
+    for json_path in Path(DATA_ROOT).glob("**/*.json"):
+        out_dir = "/home/jbkim/Documents/cctv_data"
+        cls_dict = {
+            "person": 0,
+            "wheelchair": 1,
+            "stroller": 2,
+            "drunk": 0,
+            "blind": 0,
+            "merchant": 0,
+            "child": 0,
+        }
+        convert_to_voc_format(
+            json_path=json_path, out_dir=json_path.parent, cls_dict=cls_dict,
+        )

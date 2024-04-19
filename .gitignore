@@ -9,4 +9,5 @@ pyvenv.cfg
 share/
 wandb/
 runs/
+CCTV-stroller/
 *.pt

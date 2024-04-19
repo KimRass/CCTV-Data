@@ -25,7 +25,9 @@ def get_args():
 def move_imgs(data_root, out_dir):
     for img_path in Path(data_root).glob("**/*.jpg"):
             split = img_path.parents[4].name
-            dst_path = Path(out_dir)/split/img_path.relative_to(img_path.parents[3])
+            dst_path = Path(out_dir)/split/img_path.relative_to(
+                img_path.parents[3]
+            )
             create_dir(dst_path)
             shutil.copy(img_path, dst_path)
 
@@ -73,7 +75,8 @@ def create_txt_file(json_path, out_dir, cls_dict):
                     norm_h = h / img_h
 
                     line = f"{cls_idx}"
-                    line += f" {norm_x:.6f} {norm_y:.6f} {norm_w:.6f} {norm_h:.6f}"
+                    line += f" {norm_x:.6f} {norm_y:.6f}"
+                    line += f" {norm_w:.6f} {norm_h:.6f}"
                     out_file.write(f"{line}\n")
 
 

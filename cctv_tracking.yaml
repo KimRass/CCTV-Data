@@ -1,6 +1,6 @@
-path: /home/jbkim/Documents/datasets/CCTV 추적 영상 # dataset root dir
-train: Training
-val: Validation
+path: /home/jbkim/Documents/datasets/cctv_data/ # dataset root dir
+train: 1.Training
+val: 2.Validation
 test: # test images (optional)
 
 # Classes
